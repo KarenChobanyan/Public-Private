@@ -59,6 +59,12 @@ class Vehicle {
     #model = null
     #year = null
 
+    get pullers() {
+        return this._pullers
+    }
+    get countOfPullers() {
+        return this._countOfPullers
+    }
     set name(value) {
         if (this.typeOfFuel !== null)
             this.#name = value
@@ -80,7 +86,9 @@ class Vehicle {
     get year() {
         return this.#year
     }
-
+    toString() {
+        return this.constructor.name
+    }
 }
 
 class Car extends Vehicle {
@@ -91,7 +99,7 @@ class Car extends Vehicle {
         this.horsePower = horsePower
     }
     toString() {
-        return this.constructor.name
+        return this.constructor.name + " " + this.name + " " + this.model + " " + this.year + "\n" + `Fuel: ` + this.typeOfFuel + ` Engine Power: ` + this.enginePower + "l" + ` Horsepower: ` + this.horsePower
     }
 };
 
@@ -104,22 +112,33 @@ class Cart extends Vehicle {
     set pullers(value) {
         this._pullers = value
     }
-    get pullers() {
-        return this._pullers
-    }
+   get pullers(){
+    return this._pullers
+   }
     set countOfPullers(value) {
         this._countOfPullers = value
     }
-    get countOfPullers() {
+    get countOfPullers(){
         return this._countOfPullers
     }
+    toString() {
+        return this.constructor.name + " " + `Pulling by ` + this.pullers + `: pullers must be ` + this.countOfPullers
+   }
 }
 
-let bmw = new Car("benzin", 3.5, 340)
-let volvo = new Truck("diezel", 8.8, 920)
-let sayl = new Cart()
-sayl.pullers = "horse"
-sayl.name = "Wolkswagen"
+let car1 = new Car("benzin", 3.5, 340)
+car1.name = "BMW"
+car1.model = "X6"
+car1.year = 2022
+let truck1 = new Truck("diezel", 8.8, 920)
+truck1.name = "Volvo"
+truck1.model = "VNL 860"
+truck1.year = 2020
+let vagon1 = new Cart()
+vagon1.pullers = "horse"
+vagon1.countOfPullers = 2
+
+//console.log(car1.toString(),"\n",truck1.toString(),"\n",vagon1.toString());
 
 
 //Առաջադրանք 3
@@ -140,21 +159,21 @@ let array = new ArraySum(1, 2, 3, "k", 4, 5, 6)
 
 String.prototype.upper = function () {
     let splitedText = this.split(" ")
-     let array = new Array()
-     for (let i = 0; i < splitedText.length; i++) {
-         let text = ""
-         for (let j = 0; j < splitedText[i].length; j++) {
-             if (j == 0) {
-                 text += splitedText[i][j].toUpperCase()
-             }
-             else {
-                 text += splitedText[i][j]
-             }
-         } array.push(text)
-     }
-     let newText = array.join(" ")
+    let array = new Array()
+    for (let i = 0; i < splitedText.length; i++) {
+        let text = ""
+        for (let j = 0; j < splitedText[i].length; j++) {
+            if (j == 0) {
+                text += splitedText[i][j].toUpperCase()
+            }
+            else {
+                text += splitedText[i][j]
+            }
+        } array.push(text)
+    }
+    let newText = array.join(" ")
     return newText
 }
 let text = "file tabs have been enhanced to make split views effortless, with support throughout the interface and built-in commands. the side bar,"
-console.log(text.upper());
+//console.log(text.upper());
 
