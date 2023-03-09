@@ -41,7 +41,7 @@ function totalDescription(Array) {
     for (let i = 0; i < Array.length; i++) {
         text += Array[i].name + " : " + Array[i].pieces + "  color: " + Array[i].color + ":  price per piece = " + Array[i].price + "\n"
     }
-    return text + `The totl count is ` + totalCount + "\n" + `The totl amount is ` + totalPrice
+    return text + `The total count is ` + totalCount + "\n" + `The total amount is ` + totalPrice
 }
 
 //console.log(totalDescription(bouquets[2]));
@@ -136,9 +136,9 @@ let truck1 = new Truck("diezel", 8.8, 920)
 truck1.name = "Volvo"
 truck1.model = "VNL 860"
 truck1.year = 2020
-let vagon1 = new Cart()
-vagon1.pullers = "horse"
-vagon1.countOfPullers = 2
+let wagon1 = new Cart()
+wagon1.pullers = "horse"
+wagon1.countOfPullers = 2
 
 //console.log(car1.toString(),"\n",truck1.toString(),"\n",vagon1.toString());
 
