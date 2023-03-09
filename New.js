@@ -46,6 +46,7 @@ function totalDescription(Array) {
 
 //console.log(totalDescription(bouquets[2]));
 //console.log(Flower.flowersCount);
+//console.log(Flower.amounth);
 
 //  Առաջադրանք 2
 
@@ -92,6 +93,7 @@ class Vehicle {
 }
 
 class Car extends Vehicle {
+
     constructor(typeOfFuel, enginePower, horsePower) {
         super(typeOfFuel, enginePower, horsePower)
         this.typeOfFuel = typeOfFuel
@@ -161,19 +163,11 @@ String.prototype.upper = function () {
     let splitedText = this.split(" ")
     let array = new Array()
     for (let i = 0; i < splitedText.length; i++) {
-        let text = ""
-        for (let j = 0; j < splitedText[i].length; j++) {
-            if (j == 0) {
-                text += splitedText[i][j].toUpperCase()
-            }
-            else {
-                text += splitedText[i][j]
-            }
-        } array.push(text)
+        array.push(splitedText[i][0].toUpperCase()+splitedText[i].slice(1))
     }
     let newText = array.join(" ")
     return newText
 }
 let text = "file tabs have been enhanced to make split views effortless, with support throughout the interface and built-in commands. the side bar,"
-//console.log(text.upper());
+//console.log(text.upper())
 
